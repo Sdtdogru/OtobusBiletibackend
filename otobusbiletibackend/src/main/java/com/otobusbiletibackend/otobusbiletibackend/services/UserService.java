@@ -1,11 +1,10 @@
 package com.otobusbiletibackend.otobusbiletibackend.services;
 
-import com.otobusbiletibackend.otobusbiletibackend.repository.UserRepository;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
+import com.otobusbiletibackend.otobusbiletibackend.entity.Users;
+import javassist.NotFoundException;
 
-@Service
-public class UserService {
-    @Autowired
-    private UserRepository userRepository;
+import java.util.List;
+
+public interface UserService {
+    public List<Users> findUser(String username) throws NotFoundException;
 }

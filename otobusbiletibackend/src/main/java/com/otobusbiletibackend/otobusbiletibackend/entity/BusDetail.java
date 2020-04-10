@@ -25,4 +25,6 @@ public class BusDetail {
     @Column(name = "capacity",length = 100)
     private Long capacity;
 
+
+
 }

@@ -4,6 +4,7 @@ import lombok.*;
 
 import javax.persistence.*;
 import java.util.Date;
+import java.util.List;
 
 @Entity
 @Table(name = "Journey")
@@ -12,30 +13,40 @@ import java.util.Date;
 @AllArgsConstructor
 @ToString
 @EqualsAndHashCode
-public class Journey {
+public class Journey  {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "startLocation",length = 100)
+    @Column(name = "startLocation", length = 100)
     private String startLocation;
 
-    @Column(name = "finishLocation",length = 100)
+
+    @Column(name = "finishLocation", length = 100)
     private String finishLocation;
 
-    @Column(name = "startDate",length = 100)
-    @Temporal(TemporalType.TIMESTAMP)//hem saat hem tarih
-    private Date startDate;
+    @Column
+    private String  startDate;
+
+    @Column
+    private String startTime;
+
+    @Column
+    private int capacity;
+
+    @Column(name = "ticketPrice")
+    private Double ticketPrice;
+    @Column
+    private String plaque;
+    @Column
+    private String driverName;
 
 
-    @Column(name = "ticketPrice",length = 100)
-    private Double  ticketPrice;
 
-//    @ManyToMany(fetch = FetchType.LAZY,cascade = CascadeType.ALL,targetEntity = BusDetail.class)//cok otobus cok sefer iliskisi
-//    @JoinColumn(name = "b_id")
-//    private BusDetail b_id;
-
-
+ /*   @ManyToMany(fetch = FetchType.LAZY, targetEntity = BusDetail.class)//cok otobus cok sefer iliskisi
+    @JoinColumn(name = "b_id")
+    private List<String> b_id;
+*/
 
 
 }
