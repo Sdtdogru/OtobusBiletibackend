@@ -37,6 +37,9 @@ public class OtobusbiletibackendApplication {
 			journeyRepository.save(new Journey(2L,"kocaeli","istanbul","02/05/2020","8:30",45,100D,"",""));
 			journeyRepository.save(new Journey(3L,"kocaeli","istanbul","02/05/2020","8:30",45,100D,"",""));
 			journeyRepository.save(new Journey(4L,"kocaeli","istanbul","02/05/2020","8:30",45,100D,"",""));
+			journeyRepository.save(new Journey(5L,"kocaeli","istanbul","02/06/2020","8:30",45,100D,"",""));
+			journeyRepository.save(new Journey(6L,"kocaeli","istanbul","02-06-2021","8:30",45,100D,"",""));
+			journeyRepository.save(new Journey(7L,"kocaeli","sedat","02-06-2020","8:30",45,100D,"",""));
 		};
 		}
 

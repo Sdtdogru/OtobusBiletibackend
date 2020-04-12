@@ -19,6 +19,8 @@ public interface JourneyService {
 
     List<Journey> findAll();
 
+    List<Journey> findByStartDate(String startDate);
+
     List<Journey> findPrice(Journey price);
 
     Boolean delete(Journey journey);

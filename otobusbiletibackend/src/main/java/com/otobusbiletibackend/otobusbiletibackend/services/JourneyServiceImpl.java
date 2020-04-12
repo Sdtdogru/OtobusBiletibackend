@@ -3,6 +3,7 @@ package com.otobusbiletibackend.otobusbiletibackend.services;
 import com.otobusbiletibackend.otobusbiletibackend.entity.Journey;
 import com.otobusbiletibackend.otobusbiletibackend.entity.Users;
 import com.otobusbiletibackend.otobusbiletibackend.repository.JourneyRepository;
+import lombok.var;
 import org.aspectj.bridge.IMessage;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,6 +13,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.ui.ModelMap;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class JourneyServiceImpl implements JourneyService{
@@ -43,11 +45,13 @@ public class JourneyServiceImpl implements JourneyService{
 
     @Override
     public Journey getById(Long id) {
-        Journey journey=journeyRepository.getOne(id);
-        return jdbcTemplate.queryForObject("select * from journey where id=?",new Object[]{
-                id
-        },
-                new BeanPropertyRowMapper<>(Journey.class));
+        return null;
+    }
+
+    @Override
+    public List <Journey> findByStartDate(String startDate) {
+
+       return  journeyRepository.findByStartDate(startDate);
     }
 
 
@@ -55,6 +59,10 @@ public class JourneyServiceImpl implements JourneyService{
     public List<Journey> findAll() {
         return journeyRepository.findAll();
     }
+
+
+
+
 
     @Override
     public List<Journey> findPrice(Journey price) {
